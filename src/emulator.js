@@ -28,7 +28,7 @@ export const emulator = {
 
     window.addEventListener('keydown', this.cashKeyHandler);
   },
-
+  // Метод для остановки приема наличных
   StopCashin: function () {
     console.log('Купюроприемник деактивирован');
     this.isCashinActive = false;
