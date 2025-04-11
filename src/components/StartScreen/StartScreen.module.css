@@ -1,0 +1,242 @@
+.splash {
+  height: 100vh;
+  background-color: #F5D009;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+}
+
+.splashContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.splashText {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30%;
+  padding: 0 10px;
+}
+
+/* Анимация кофейных зерен */
+.coffeeBeans {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bean {
+  position: absolute;
+  opacity: 0;
+  width: 40px;
+  height: auto;
+  animation: beanDrop 1s ease-out forwards, beanFloat 3s ease-in-out infinite;
+}
+
+.bean1 {
+  top: 3%;
+  left: 20%;
+  animation-delay: 0.2s;
+  rotate: -15deg;
+  scale: 1.2;
+  transform: translateY(-100px) scale(1);
+}
+
+.bean2 {
+  top: 6%;
+  left: 55%;
+  scale: 0.7;
+  rotate: -50deg;
+  animation-delay: 0.3s;
+  transform: translateY(-100px) scale(0.8);
+}
+
+.bean3 {
+  top: 15%;
+  left: 35%;
+  animation-delay: 0.4s;
+  transform: translateY(-100px) scale(1.9);
+  filter: blur(1px);
+}
+
+.bean4 {
+  top: 55%;
+  left: 30%;
+  scale: 1;
+  rotate: -20deg;
+  animation-delay: 0.5s;
+  transform: translateY(-100px) scale(1);
+}
+
+.bean5 {
+  top: 30%;
+  left: 70%;
+  animation-delay: 0.6s;
+  scale: 1.5;
+  rotate: 15deg;
+  transform: translateY(-100px) scale(0.6);
+}
+
+.bean6 {
+  top: 70%;
+  left: 62%;
+  animation-delay: 0.7s;
+  scale: 2;
+  transform: translateY(-100px) scale(1.1);
+  filter: blur(2px);
+}
+
+@keyframes beanDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px) scale(var(--scale, 1)) rotate(-15deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(20px) scale(var(--scale, 1)) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(var(--scale, 1)) rotate(0);
+  }
+}
+
+@keyframes beanFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(5px) rotate(4deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+/* Анимация чашек */
+.coffeeCup {
+  position: absolute;
+  width: 75%;
+  height: auto;
+  right: 0;
+  opacity: 0;
+  animation: cupAppear 1s ease-out forwards;
+  animation-delay: 0.8s;
+  transform: translateY(20px);
+}
+
+.coffeeCup2 {
+  position: absolute;
+  height: auto;
+  width: 70%;
+  right: 30%;
+  bottom: 0;
+  opacity: 0;
+  animation: cupAppear 1s ease-out forwards;
+  animation-delay: 1.2s;
+  transform: translateY(20px);
+  z-index: 2;
+}
+
+@keyframes cupAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Текст */
+.splashTextLine {
+  display: block;
+  font-size: 72px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: textAppear 0.8s ease-out forwards;
+  z-index: 1;
+}
+
+.splashTextLine:nth-child(1) { animation-delay: 1s; }
+.splashTextLine:nth-child(2) { animation-delay: 1.2s; }
+.splashTextLine:nth-child(3) { animation-delay: 1.4s; }
+
+@keyframes textAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Кнопка с волной */
+.splashTouch {
+  position: absolute;
+  bottom: 25px;
+  right: -20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 1.8s;
+  z-index: 0;
+}
+
+.touchText {
+  font-size: 24px;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+  background: white;
+  padding: 100px 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: pulseBorder 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseBorder {
+  0% {
+    box-shadow: 0 0 0 0 rgb(255, 255, 255);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes cupWobble {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(2px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(-1deg);
+  }
+}
+
+.coffeeCup,
+.coffeeCup2 {
+  animation: cupAppear 1s ease-out forwards, cupWobble 3s ease-in-out infinite;
+}
