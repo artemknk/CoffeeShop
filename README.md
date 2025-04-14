@@ -1,12 +1,16 @@
-# React + Vite
+## Coffee Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Для внесения денег используйте:
+  Ctrl+Shift+1 - 5 рублей 
+  Ctrl+Shift+2 - 10 рублей  
+  Ctrl+Shift+3 - 100 рублей 
+  Ctrl+Shift+4 - 200 рублей 
+  Ctrl+Shift+5 - 500 рублей 
+  Ctrl+Shift+6 - 1000 рублей  
+Кнопка "Оплатить" станет активной при внесении достаточной суммы
 
-Currently, two official plugins are available:
+Для эмуляции оплаты нажмите Ctrl+4
+Для отмены операции нажмите Ctrl+5
+Эмуляция ошибки оплаты. После старта оплаты нажмите Ctrl+Ecs
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Сопутствующие выводы есть в консоли
