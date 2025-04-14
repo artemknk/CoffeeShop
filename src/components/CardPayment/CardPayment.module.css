@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 20px;
   height: 100vh;
   background-color: #F5D009;
 }
 .cardImg {
-  width: 100%;
+  width: 50%;
   height: auto;
   border-radius: 8px;
 }
@@ -18,14 +18,30 @@
   text-align: center;
   font-size: 30px;
 }
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
 .backButton {
-  background-color: white;
+  background-color: #FAFAFA;
   color: black;
   border: none;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
-  font-size: 16px;
-  width: 90%;
-  margin: 0 auto;
+  font-size: 20px;
+  height: 60px;
+  width: 100%;
+}
+.instructions {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  max-width: 400px;
 }

@@ -2,6 +2,7 @@ import style from './DrinkSelection.module.css';
 import React, { useState } from 'react';
 import drinks from '../../data/drinks';
 import drinksCategorys from '../../data/drinksCategorys';
+import callOut from '../../../public/assets/icons/call-out.svg';
 
 const DrinkSelection = ({ onSelect }) => {
   const [selectedDrink, setSelectedDrink] = useState('coffee');
@@ -12,7 +13,7 @@ const DrinkSelection = ({ onSelect }) => {
         <h1>Выбор напитка</h1>
         <div className={style.authSection}>
           <div className={style.iconWrapper}>
-            <img className={style.authIcon} src="./src/assets/icons/call-out.svg" alt="call icon" />
+            <img className={style.authIcon} src={callOut} alt="call icon" />
           </div>
           <button className={style.authBtn}>Вход / регистрация</button>
         </div>
@@ -46,6 +47,7 @@ const DrinkSelection = ({ onSelect }) => {
         </div>
       </div>
     </div>
+
   );
 };
 

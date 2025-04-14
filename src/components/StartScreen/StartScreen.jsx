@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './StartScreen.module.css';
-import coffeeCup from '@/assets/start-screen/cup.png';
-import coffeeCup2 from '@/assets/start-screen/cup2.png';
-import bean from '@/assets/start-screen/coffee.png';
+import coffeeCup from '/assets/start-screen/cup.png';
+import coffeeCup2 from '/assets/start-screen/cup2.png';
+import bean from '/assets/start-screen/coffee.png';
 const StartScreen = ({ onStart }) => {
   const handleClick = () => {
     onStart();

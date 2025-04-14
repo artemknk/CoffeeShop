@@ -1,0 +1,70 @@
+.paymentMethodModal {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20%;
+  padding: 0 20px;
+}
+.paymentMethodContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.backButton {
+  padding: 0;
+  width: 25%;
+  background-color: white;
+  color: black;
+  background-color: #FAFAFA;
+  border-bottom: 1px solid #D3D3D3;
+  border-left: 1px solid #D3D3D3;
+  border-right: 1px solid #D3D3D3;
+  border-radius: 0 0 15px 15px;
+}
+.backButton p {
+  color: #D3D3D3;
+  font-weight: 100;
+  font-size: 46px;
+  rotate: 45deg;
+}
+.drinkDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #D3D3D3;
+  border-radius: 8px;
+  box-shadow: 5px 6px 20px 5px rgba(0, 0, 0, 0.05);
+
+}
+.drinkDetails h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.totalPrice {
+  font-size: 20px;
+  font-weight: 600;
+}
+.paymentButtons {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+.paymentButtons button {
+  color: black;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #F5D009;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}

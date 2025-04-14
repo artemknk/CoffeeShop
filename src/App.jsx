@@ -2,11 +2,11 @@ import './App.css';
 import React, { useState } from 'react';
 import StartScreen from './components/StartScreen/StartScreen';
 import DrinkSelection from './components/DrinksSelection/DrinkSelection';
-import PaymentMethod from './components/PaymentMethod';
+import PaymentMethod from './components/PaymentMethod/PaymentMethod';
 import CashPayment from './components/CashPayment/CashPayment';
 import CardPayment from './components/CardPayment/CardPayment';
-import DrinkPreparation from './components/DrinkPreparation';
-import Completion from './components/Completion';
+import DrinkPreparation from './components/DrinkPreparation/DrinkPreparation';
+import Completion from './components/Completion/Completion';
 
 const App = () => {
   const [currentStep, setCurrentStep] = useState('start'); // Начинаем с экрана приветствия
@@ -69,6 +69,7 @@ const App = () => {
             drink={selectedDrink}
             onComplete={handlePaymentComplete}
             onBack={() => setCurrentStep('payment-method')}
+            
           />
         );
       case 'preparation':

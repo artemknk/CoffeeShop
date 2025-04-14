@@ -50,23 +50,23 @@ const CashPayment = ({ drink, onComplete, onBack }) => {
 
   return (
     <div className={style.cashPayment}>
-      <h1>Оплата наличными</h1>
-      <p>Сумма к оплате: {drink.price} ₽</p>
-      <p>Внесено: {paidAmount} ₽</p>
-      {change > 0 && <p>Сдача: {change} ₽</p>}
-      
+      <div className={style.cashPaymentContent}>
+        <p>Сумма к оплате: {drink.price} ₽</p>
+        <p>Внесено: {paidAmount} ₽</p>
+        {change > 0 && <p>Сдача: {change} ₽</p>}
+      </div>
       <div className={style.paymentControls}>
         <button 
           onClick={handlePayment}
           disabled={!isPaymentEnabled}
-          className={isPaymentEnabled ? `${style.active}` : ''}
+          className={isPaymentEnabled ? `${style.active}` : `${style.isPaymentEnabled}`}
         >
           Оплатить
         </button>
         <button className={style.cancelButton} onClick={handleCancel}>Отмена</button>
       </div>
 
-      <div className="instructions">
+      <div className={style.instructions}>
         <p>Для внесения денег используйте:</p>
         <ul>
           <li>Ctrl+Shift+1 - 5 рублей</li>

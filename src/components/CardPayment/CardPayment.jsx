@@ -1,12 +1,12 @@
-// CardPayment.jsx
 import style from './CardPayment.module.css';
 import React, { useState, useEffect } from 'react';
+import Card from '../../../public/assets/icons/card-icon.svg';
 import { emulator } from '../../emulator';
-const CardPayment = ({ drink, onComplete, onBack }) => {
-  console.log('Для эмуляции оплаты нажмите Ctrl+4');
-  console.log('Для отмены операции нажмите Ctrl+5');
+import FailTransaction from '../FailTransaction/FailTransaction'
 
+const CardPayment = ({ drink, onComplete, onBack }) => {
   const [status, setStatus] = useState('Приложите карту к терминалу');
+  const [paymentFailed, setPaymentFailed] = useState(false);
   
   useEffect(() => {
     const handleKeyPress = (e) => {
@@ -19,6 +19,7 @@ const CardPayment = ({ drink, onComplete, onBack }) => {
               setTimeout(() => onComplete(), 2000);
             } else {
               setStatus('Ошибка оплаты');
+              setPaymentFailed(true);
             }
           },
           (message) => setStatus(message)
@@ -27,6 +28,7 @@ const CardPayment = ({ drink, onComplete, onBack }) => {
       if (e.ctrlKey && e.key === '5') {
         emulator.BankCardCancel();
         setStatus('Операция отменена');
+        setPaymentFailed(true);
       }
     };
 
@@ -34,13 +36,28 @@ const CardPayment = ({ drink, onComplete, onBack }) => {
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [drink.price, onComplete]);
 
+  if (paymentFailed) {
+    return (
+      <FailTransaction 
+        onRestart={() => setPaymentFailed(false)} 
+        onBack={onBack}
+      />
+    );
+  }
+
   return (
     <div className={style.cardPayment}>
-      <h1>Оплата картой</h1>
       <p>Сумма к оплате: {drink.price} ₽</p>
-      <img className={style.cardImg} src="./src/assets/icons/card-icon.svg" alt="" />
-      <div className={style.status}>{status}</div>
+      <div className={style.card}>
+        <img className={style.cardImg} src={Card} alt="card" />
+        <div className={style.status}>{status}</div>
+      </div>
       <button className={style.backButton} onClick={onBack}>Отмена</button>
+      <div className={style.instructions}>
+        <p>Для эмуляции оплаты нажмите Ctrl+4</p>
+        <p>Для отмены операции нажмите Ctrl+5</p>
+        <p>Эмуляция ошибки оплаты. После старта оплаты нажмите Ctrl+Ecs</p>
+      </div>
     </div>
   );
 };
