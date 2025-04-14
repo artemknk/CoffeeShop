@@ -12,3 +12,5 @@ createRoot(document.getElementById('root')).render(
     </HashRouter>
   </React.StrictMode>,
 )
+
+//Эти странные обёртки, чтобы на гите запустить реакт.
